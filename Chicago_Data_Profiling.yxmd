@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="473" y="29" width="409" height="385" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Chicago Food Inspection</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="498" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Admin\Downloads\Food_Inspections.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Food_Inspections.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Inspection ID" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="DBA Name" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="AKA Name" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="License #" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Facility Type" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Risk" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Address" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="City" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="State" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Zip" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Inspection Date" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Inspection Type" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Results" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Violations" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Latitude" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Longitude" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+                <Field name="Location" size="254" source="File: C:\Users\Admin\Downloads\Food_Inspections.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BasicDataProfile.BasicDataProfile">
+            <Position x="666" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Limit_UniqueCount>10000</Limit_UniqueCount>
+              <Limit_UniqueValuesSize>1000</Limit_UniqueValuesSize>
+              <IsMetric value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBasicDataProfile" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings>
+            <Position x="666" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Select Fields">Inspection ID=True,DBA Name=True,AKA Name=True,License #=True,Facility Type=True,Risk=True,Address=True,City=True,State=True,Zip=True,Inspection Date=True,Inspection Type=True,Results=True,Violations=True,Latitude=True,Longitude=True,Location=True</Value>
+              <Value name="Sample Data">False</Value>
+              <Value name="Number">True</Value>
+              <Value name="NNumber">5000</Value>
+              <Value name="Percent">False</Value>
+              <Value name="NPercent">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Field_Summary_Report.yxmc" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="798" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="798" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="666" y="78" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="798" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="798" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="17" y="17" width="397" height="397" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Chicago Business License</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="42" y="161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Admin\Downloads\Business_Licenses.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Business_Licenses.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ID" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE ID" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="ACCOUNT NUMBER" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="SITE NUMBER" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LEGAL NAME" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="DOING BUSINESS AS NAME" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="ADDRESS" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="CITY" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="STATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="ZIP CODE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="WARD" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="PRECINCT" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="WARD PRECINCT" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="POLICE DISTRICT" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE CODE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE DESCRIPTION" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="BUSINESS ACTIVITY ID" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="BUSINESS ACTIVITY" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE NUMBER" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="APPLICATION TYPE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="APPLICATION CREATED DATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="APPLICATION REQUIREMENTS COMPLETE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="PAYMENT DATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="CONDITIONAL APPROVAL" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE TERM START DATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE TERM EXPIRATION DATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE APPROVED FOR ISSUANCE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="DATE ISSUED" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE STATUS" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LICENSE STATUS CHANGE DATE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="SSA" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LATITUDE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LONGITUDE" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+                <Field name="LOCATION" size="254" source="File: C:\Users\Admin\Downloads\Business_Licenses.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BasicDataProfile.BasicDataProfile">
+            <Position x="198" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Limit_UniqueCount>10000</Limit_UniqueCount>
+              <Limit_UniqueValuesSize>1000</Limit_UniqueValuesSize>
+              <IsMetric value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBasicDataProfile" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings>
+            <Position x="198" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Select Fields">ID=True,LICENSE ID=True,ACCOUNT NUMBER=True,SITE NUMBER=True,LEGAL NAME=True,DOING BUSINESS AS NAME=True,ADDRESS=True,CITY=True,STATE=True,ZIP CODE=True,WARD=True,PRECINCT=True,WARD PRECINCT=True,POLICE DISTRICT=True,LICENSE CODE=True,LICENSE DESCRIPTION=True,BUSINESS ACTIVITY ID=True,BUSINESS ACTIVITY=True,LICENSE NUMBER=True,APPLICATION TYPE=True,APPLICATION CREATED DATE=True,APPLICATION REQUIREMENTS COMPLETE=True,PAYMENT DATE=True,CONDITIONAL APPROVAL=True,LICENSE TERM START DATE=True,LICENSE TERM EXPIRATION DATE=True,LICENSE APPROVED FOR ISSUANCE=True,DATE ISSUED=True,LICENSE STATUS=True,LICENSE STATUS CHANGE DATE=True,SSA=True,LATITUDE=True,LONGITUDE=True,LOCATION=True</Value>
+              <Value name="Sample Data">False</Value>
+              <Value name="Number">True</Value>
+              <Value name="NNumber">5000</Value>
+              <Value name="Percent">False</Value>
+              <Value name="NPercent">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Field_Summary_Report.yxmc" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="330" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_9104_805baa52f848c74fbb42644d0382ce73_\Engine_9104_a20ed10446d79f4b89ee3a010161b36c~.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="330" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_9104_805baa52f848c74fbb42644d0382ce73_\Engine_9104_23b043d1d3a0a545ac2bcb361c56e35e~.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="198" y="66" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_9104_805baa52f848c74fbb42644d0382ce73_\Engine_9104_75aef5793262164f9f7e2aa88e358977~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="330" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_9104_805baa52f848c74fbb42644d0382ce73_\Engine_9104_8e7b99a3c5275f4fa47df6b3731b1c8f~.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="330" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_9104_805baa52f848c74fbb42644d0382ce73_\Engine_9104_92bc2203b08a7e4dbf4a618d34b0e1ed~.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Field Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Interactive" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Reports" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Field Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Interactive" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Reports" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Chicago_Data_Profiling</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="3af982d5-061c-4e8d-945b-bdc6a516ce1e" />
+      <Telemetry>
+        <PreviousWorkflowId value="45420125-b51c-43ac-ae7e-5866031e816f" />
+        <OriginWorkflowId value="45420125-b51c-43ac-ae7e-5866031e816f" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
